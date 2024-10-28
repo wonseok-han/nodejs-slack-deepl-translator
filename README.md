@@ -81,6 +81,8 @@ vercel --prod
 Hello, world.
 ```
 
+![sample](/assets/sample.gif)
+
 ## Reference
 
 * [https://api.slack.com/](https://api.slack.com/)
