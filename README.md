@@ -1,4 +1,4 @@
-# Google Drive Appdata Test
+# Nodejs Slack DeepL Translator
 
 * **Slack**에 **DeepL** API를 연동해 번역봇으로 사용하기 위한 토이 프로젝트
 
@@ -33,7 +33,53 @@ SLACK_BOT_TOKEN=
 DEEPL_API_KEY=
 ```
 
+### 배포 방법
 
+* vercel-cli 사용을 위해 vercel 라이브러리를 전역에 설치하고 로그인합니다.
+
+```bash
+npm instal -g vercel
+
+vercel login
+```
+
+* `vercel.json` 파일을 생성하고 다음과 같이 작성합니다.
+
+```json
+{
+    "version": 2,
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "api/app.js"
+      }
+    ]
+}
+```
+
+* 다음과 같은 vercel 명령을 통해 `production`에 배포합니다.
+
+```bash
+vercel --prod
+```
+
+### Slack에서 사용 방법
+
+1. Slack 채널에 Bot을 추가합니다.
+2. **@지정한봇명**과 **번역할 언어(ko, en)**, 번역될 **text**를 입력합니다.
+
+```plaintext
+예시)
+@trans-bot en 안녕 세상아.
+@trans-bot ko Hello, world.
+
+또는
+
+@trans-bot en
+안녕 세상아.
+@trans-bot ko
+Hello, world.
+```
 
 ## Reference
 
